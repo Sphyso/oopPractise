@@ -41,16 +41,18 @@ class Shape {
     }
 }
 
-class Circle extends Shape{
-    constructor(radius){
-        super(radius)
-        const pi = 3.14;
+class Circle extends Shape {
+    constructor(radius) {
+        super(radius);
+        this.pi = Math.PI; // Set pi as a property of the Circle instance
     }
 
-    area(){
+    area() {
         super.area();
-        let area = this.pi * (this.radius**2);
-        console.log("Circle: " +area);
+        let squaredRadius = Math.pow(this.radius, 2);
+        let area = this.pi * squaredRadius; // Use this.pi instead of pi
+        area = area.toFixed(2);
+        console.log("Circle: " + area);
     }
 }
 
